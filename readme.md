@@ -46,8 +46,10 @@ echo "${ageOfFileInDays} ${numberOfCommits} ${numberOfAuthors} ${lizardStats} $2
 
 ### Information per repo
 
+```
 Number of commits
 Number of contributors
+```
 
 ### Information per file
 ```
