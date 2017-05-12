@@ -50,15 +50,16 @@ Number of commits
 Number of contributors
 
 ### Information per file
-
+```
 num days old
 num of commits 
 num of authors
 lizzard stats - nLines, nLoc, Avg.NLOC, AvgCCN, Avg.token, Fun Cnt, Warning Cnt, Fun Rt, nLoc RT
 Is test file
-
+```
 ### Example
 
+```
 number of total commits for repo 34683
 number of contributors for repo 79
 Count: 470
@@ -76,7 +77,7 @@ age days, nCommits, nAuthors, nLines nloc, Avg.NLOC , AvgCCN,  Avg.token, Fun Cn
 813 507 12 77 11.7 2.3 46.2 6 0 0.00 0.00 0 0
 813 497 13 72 11.6 1.2 92.6 5 0 0.00 0.00 1 0
 813 611 27 356 8.5 1.8 44.8 34 0 0.00 0.00 0 0
-
+```
 
 ## Sharing
 
@@ -89,6 +90,7 @@ Please see below the instruction for sharing the data and if you could also incl
 
 ## Emailing
 
+```
 Email Address:   xxxx
 Subject: Project Stats v1
 Body:
@@ -112,5 +114,5 @@ The average percentage of daily crashes against number of users is [x], you can 
 Or
 Average number of daily users [x], you can use this publically and anonymously [YES/NO]
 Average number of daily crashes [x], you can use this publically and anonymously [YES/NO]
-
+```
 
