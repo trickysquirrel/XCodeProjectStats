@@ -93,7 +93,7 @@ Please see below the instruction for sharing the data and if you could also incl
 ## Emailing
 
 ```
-Email Address:   xxxx
+Email Address: confusedlarma@gmail.com
 Subject: Project Stats v1
 Body:
 
