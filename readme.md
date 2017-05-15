@@ -27,6 +27,8 @@ function lizardStatsForFile {
 4. Run the script and wait a little while (the more files there are the longer this takes)
 
 ```
+bash gitStats.sh > output.txt  
+or a specific folder
 bash gitStats.sh "/location/of/project/folders" > output.txt
 ```
 

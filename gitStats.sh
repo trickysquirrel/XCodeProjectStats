@@ -78,10 +78,13 @@ function echoNumberOfContributorsForRepo {
 
 # Ensure user has entered the folder to examin
 
+# Ensure user has entered the folder to examin
+
 if [ -z "${ROOT_DIRECTORY}" ]
 then
-echo "Mandatory: 1st argument must be a git directory" >&2
-exit 1
+echo "1st argument to the script is the root folder location which has not been added, using current folder "
+ROOT_DIRECTORY="$(pwd)"
+echo ${ROOT_DIRECTORY}
 fi
 
 echo "Please make sure you have set the directory for lizard in the method lizardStatsForFile"
