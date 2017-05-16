@@ -78,7 +78,7 @@ function statsForFile {
     numberOfAuthors="$(numberOfAuthorsForFile "$1")"
     numberOfLines="$(numberOfLinesForFile "$1")"
     lizardStats="$(lizardStatsForFile "$1")"
-    echo "${ageOfFirstAndLastCommitFileInDays} ${numberOfCommits} ${numberOfAuthors} ${numberOfLines} ${lizardStats} $2 $file"
+    echo "${ageOfFirstAndLastCommitFileInDays} ${numberOfCommits} ${numberOfAuthors} ${numberOfLines} ${lizardStats} $2"
 }
 
 

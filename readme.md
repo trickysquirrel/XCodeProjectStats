@@ -32,15 +32,14 @@ or a specific folder
 bash gitStats.sh "/location/of/project/folders" > output.txt
 ```
 
-Note: If you want to see which file the stats relate to amend the following line
+### If you would like to see a reference to each file, change
 
-from
 ```
-echo "${ageOfFileInDays} ${numberOfCommits} ${numberOfAuthors} ${lizardStats} $2"
+echo "${ageOfFirstAndLastCommitFileInDays} ${numberOfCommits} ${numberOfAuthors} ${numberOfLines} ${lizardStats} $2"
 ```
 to
 ```
-echo "${ageOfFileInDays} ${numberOfCommits} ${numberOfAuthors} ${lizardStats} $2 $file"
+echo "${ageOfFirstAndLastCommitFileInDays} ${numberOfCommits} ${numberOfAuthors} ${numberOfLines} ${lizardStats} $2 $file"
 ```
 
 
@@ -68,7 +67,17 @@ Is test file
 ```
 number of total commits for repo 34683
 number of contributors for repo 79
-Count: 470
+number of total commits for repo 34737
+number of total contributors for repo 79
+number of contributors for this month 10
+number of contributors for 6 months ago 9
+number of contributors for 1 year ago 8
+number of contributors for 1.5 years ago 4
+number of contributors for 2 years ago 2
+number of contributors for 3 years ago 1
+number of contributors for 4 years ago 0
+number of contributors for 5 years ago 0
+number of contributors for 6 years ago 0
 days since last commit, days since first commit, nCommits, nAuthors, nLines, nloc, Avg.NLOC , AvgCCN,  Avg.token, Fun Cnt, Warning cnt, Fun Rt, nloc Rt, Test(Yes=1)
 813 496 12 21 9.5 2.0 43.0 2 0 0.00 0.00 0 0
 1204 500 16 221 7.7 2.0 38.6 26 0 0.00 0.00 0 0
@@ -118,4 +127,3 @@ Or
 Average number of daily users [x], you can use this publically and anonymously [YES/NO]
 Average number of daily crashes [x], you can use this publically and anonymously [YES/NO]
 ```
-
