@@ -50,14 +50,16 @@ echo "${ageOfFileInDays} ${numberOfCommits} ${numberOfAuthors} ${lizardStats} $2
 
 ```
 Number of commits
-Number of contributors
+Number of contributors for entire project length
+A month sample of the number of contributors over last 6 years
 ```
 
 ### Information per file
 ```
-num days old
+num days since last commit
+num days since first commit
 num of commits 
-num of authors
+num of contributors
 lizzard stats - nLines, nLoc, Avg.NLOC, AvgCCN, Avg.token, Fun Cnt, Warning Cnt, Fun Rt, nLoc RT
 Is test file
 ```
@@ -67,7 +69,7 @@ Is test file
 number of total commits for repo 34683
 number of contributors for repo 79
 Count: 470
-age days, nCommits, nAuthors, nLines nloc, Avg.NLOC , AvgCCN,  Avg.token, Fun Cnt, Warning cnt, Fun Rt, nloc Rt, Test(Yes=1)
+days since last commit, days since first commit, nCommits, nAuthors, nLines, nloc, Avg.NLOC , AvgCCN,  Avg.token, Fun Cnt, Warning cnt, Fun Rt, nloc Rt, Test(Yes=1)
 813 496 12 21 9.5 2.0 43.0 2 0 0.00 0.00 0 0
 1204 500 16 221 7.7 2.0 38.6 26 0 0.00 0.00 0 0
 813 497 12 101 9.0 1.4 42.6 11 0 0.00 0.00 0 1
@@ -101,10 +103,7 @@ Body:
 
 You can only share the stats annonoumously in this repo [YES/NO]
 The software architecture used in this project is [MCV with some MVVM, just Reactive etc]
-The average number of developers today is [x]
 The average number of QA today is [x]
-The team is still growing [YES/NO]
-The project is still under development [YES/NO]
 We have specific written down coding standards [YES/NO]
 We have specific OCLint rules [max method lines 15 etc, no more than 20 methods to a class etc]
 We write tests [SOME TIMES / ALL OF THE TIME]
