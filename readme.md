@@ -27,9 +27,9 @@ function lizardStatsForFile {
 4. Run the script and wait a little while (the more files there are the longer this takes)
 
 ```
-bash gitStats.sh > output.txt  
+bash codestats.sh > output.txt  
 or a specific folder
-bash gitStats.sh "/location/of/project/folders" > output.txt
+bash codestats.sh "/location/of/project/folders" > output.txt
 ```
 
 ### If you would like to see a reference to each file, change
