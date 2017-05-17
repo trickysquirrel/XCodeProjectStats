@@ -109,7 +109,6 @@ ROOT_DIRECTORY="$(pwd)"
 fi
 
 echo "Please make sure you have set the directory for lizard in the method lizardStatsForFile"
-echo "Looking in root directory ${ROOT_DIRECTORY} and sub folders"
 
 # Echo repo stats
 
