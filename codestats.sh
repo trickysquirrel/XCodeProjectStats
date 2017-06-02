@@ -14,7 +14,11 @@ function lizardStatsForFile {
     output="$(python /Users/xxxxx/Downloads/lizard-master/lizard.py "$1")"
     lastline="${output##*$'\n'}"
     IFS=':'; arrIN=($lastline); unset IFS;
-    echo $arrIN
+    replaceMultipleSpaces=$(echo "$arrIN" | tr -s " ")
+    replaceMultipleSpaces=${replaceMultipleSpaces%% }
+    replaceMultipleSpaces=${replaceMultipleSpaces## }
+    arrayWithCommas=${replaceMultipleSpaces// /,}
+    echo $arrayWithCommas
 }
 
 
@@ -51,23 +55,23 @@ function numberOfDaysSinceLastAndFirstCommitForFile {
     IFS="$oldIFS"
 
     if [ ${#lines[@]} -eq 0 ]; then
-    echo "0 0"
+        echo "0,0"
     else
-    numberOfLines=${#lines[@]}
+        numberOfLines=${#lines[@]}
 
-    timeOfLastCommit=${lines[0]}
-    timeOfFirstCommit=${lines[$numberOfLines-1]}
+        timeOfLastCommit=${lines[0]}
+        timeOfFirstCommit=${lines[$numberOfLines-1]}
 
-    lastCommitDateSeconds=$(date -j -f '%Y-%m-%d %H:%M:%S %z' "$timeOfLastCommit" +'%s')
-    firstCommitDateSeconds=$(date -j -f '%Y-%m-%d %H:%M:%S %z' "$timeOfFirstCommit" +'%s')
+        lastCommitDateSeconds=$(date -j -f '%Y-%m-%d %H:%M:%S %z' "$timeOfLastCommit" +'%s')
+        firstCommitDateSeconds=$(date -j -f '%Y-%m-%d %H:%M:%S %z' "$timeOfFirstCommit" +'%s')
 
-    todaysDateSeconds=$(date +'%s')
-    periodOfDays=$((60*60*24))
+        todaysDateSeconds=$(date +'%s')
+        periodOfDays=$((60*60*24))
 
-    dateDiffLastCommit=$(( ($todaysDateSeconds - $lastCommitDateSeconds)/($periodOfDays) ))
-    dateDiffFirstCommit=$(( ($todaysDateSeconds - $firstCommitDateSeconds)/($periodOfDays) ))
+        dateDiffLastCommit=$(( ($todaysDateSeconds - $lastCommitDateSeconds)/($periodOfDays) ))
+        dateDiffFirstCommit=$(( ($todaysDateSeconds - $firstCommitDateSeconds)/($periodOfDays) ))
 
-    echo "${dateDiffLastCommit} ${dateDiffFirstCommit}"
+        echo "${dateDiffLastCommit},${dateDiffFirstCommit}"
     fi
 }
 
@@ -78,7 +82,7 @@ function statsForFile {
     numberOfAuthors="$(numberOfAuthorsForFile "$1")"
     numberOfLines="$(numberOfLinesForFile "$1")"
     lizardStats="$(lizardStatsForFile "$1")"
-    echo "${ageOfFirstAndLastCommitFileInDays} ${numberOfCommits} ${numberOfAuthors} ${numberOfLines} ${lizardStats} $2"
+    echo "${ageOfFirstAndLastCommitFileInDays},${numberOfCommits},${numberOfAuthors},${numberOfLines},${lizardStats},$2,$file"
 }
 
 
@@ -133,9 +137,9 @@ FOLDER=${ROOT_DIRECTORY}
 
 find "${FOLDER}" -type f -name '*.m' -or -name '*.swift' | while read file; do
 
-    if [[ $file == *"Test"* ]]; then
+if [[ $file == *"Test"* ]]; then
     statsForFile "$file" "1"
-    else
+else
     statsForFile "$file" "0"
-    fi
+fi
 done
